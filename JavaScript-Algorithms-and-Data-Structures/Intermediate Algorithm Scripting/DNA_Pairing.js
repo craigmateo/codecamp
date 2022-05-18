@@ -11,8 +11,8 @@ The character and its pair are paired up in an array, and all the arrays are gro
 
 function pairElement(str) {
   var n = str.split("");
-  k = [];
-  for (i=0;i<n.length;i++) {
+  let k = [];
+  for (let i=0;i<n.length;i++) {
     if (n[i]=='G') {
       k.push(['G','C']);
     }
