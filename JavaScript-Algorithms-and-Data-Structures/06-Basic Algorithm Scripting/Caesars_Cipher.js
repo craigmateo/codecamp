@@ -8,30 +8,27 @@ All letters will be uppercase. Do not transform any non-alphabetic character (i.
 
  */
 function rot13(str) { // LBH QVQ VG!
-  x = [];
-  y = [];
-  for (i=0;i<str.length;i=i+1) {
-    if (str.charCodeAt(i) > 77) {
-    var newStr = str.charCodeAt(i)-13;
-       x.push(newStr);
+    const x = [];
+    const y = [];
+    for (let i = 0; i < str.length; i = i + 1) {
+        if (str.charCodeAt(i) > 77) {
+            var newStr = str.charCodeAt(i) - 13;
+            x.push(newStr);
+        } else if (str.charCodeAt(i) <= 77 && str.charCodeAt(i) >= 65) {
+            var newStr2 = 90 - (13 - (str.charCodeAt(i) - 65 + 1));
+            x.push(newStr2);
+        } else {
+            var newStr3 = str.charCodeAt(i);
+            x.push(newStr3);
+        }
+        var final = String.fromCharCode(x[i]);
+        y.push(final);
+
+
     }
-    else if (str.charCodeAt(i) <= 77 && str.charCodeAt(i) >= 65) {
-       newStr2 = 90 - (13-(str.charCodeAt(i)-65+1));
-       x.push(newStr2);
-    }
-    else {
-      var newStr3 = str.charCodeAt(i);
-      x.push(newStr3);
-    }
-    var final = String.fromCharCode(x[i]);
-      y.push(final);
-    
-    
-  }
-  var r = y.join("");
-  r = r.split('-').join(' ');
-  return r;
+    var r = y.join("");
+    r = r.split('-').join(' ');
+    return r;
 }
 
-// Change the inputs below to test
-rot13("SERR CVMMN!");
+rot13("SERR PBQR PNZC");
