@@ -1,0 +1,6 @@
+function functionWithArgs(x ,y) {
+  let sum = x+y;
+  console.log(sum);
+}
+
+functionWithArgs(3 ,4)
