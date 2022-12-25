@@ -3,7 +3,7 @@
 function largestOfFour(arr) {
   // You can do this!
   var maxNum = [];
-  for (i = 0; i < 4; i++){
+  for (let i = 0; i < 4; i++){
   var max = arr[i].sort(function(a,b){return b-a;})[0];
   maxNum.push(max);
   }

@@ -4,24 +4,12 @@ For example, ["hello", "Hello"], should return true because all of the letters i
 
  */
 function mutation(arr) {
-  //all to lower case:
-  for (i=0; i<arr.length; i=i+1) {
-  arr[i] = arr[i].toLowerCase();
-  //split strings
-  arr[i] = arr[i].split("");
-    }
-  truthTable = [];
-  for (i=0; i<arr[1].length; i=i+1) {
-    var value = arr[0].indexOf(arr[1][i]);
-    truthTable.push(value);
+  const test = arr[1].toLowerCase();
+  const target = arr[0].toLowerCase();
+  for (let i = 0; i < test.length; i++) {
+    if (target.indexOf(test[i]) < 0) return false;
   }
-    var final = truthTable.indexOf(-1);
-  if (final != -1) {
-    return false;
-  }
-    else {
-      return true;
-    }  
+  return true;
 }
 
 mutation(["Hello", "hey"]);

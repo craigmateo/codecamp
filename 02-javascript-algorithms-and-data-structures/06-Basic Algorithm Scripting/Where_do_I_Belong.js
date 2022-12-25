@@ -4,24 +4,13 @@ For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater
 
  */
 function getIndexToIns(arr, num) {
-  // Find my place in this sorted array.
-  
-  arr.sort(function(a, b) {
-  return a - b;
-   });
+  arr.sort((a, b) => a - b);
 
-  for (i=0; i<arr.length; i=i+1)
-    if (num>arr[i] && num <=arr[i+1]) {
-      index = i+1;
-    } else if (num <=arr[0]) {
-      index = 0;
-    }
-      else if (num >= arr[arr.length -1]) {
-        index = arr.length;
-    }
-  
-  return index;
-  
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] >= num) return i;
+  }
+
+  return arr.length;
 }
 
 getIndexToIns([5, 3, 20, 3], 5);
