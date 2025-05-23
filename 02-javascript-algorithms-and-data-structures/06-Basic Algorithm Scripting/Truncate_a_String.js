@@ -2,14 +2,10 @@
 
 function truncateString(str, num) {
   // Clear out that junk in your trunk
-  var a = str.split(" ");    
-  var aLen = a[0].length;
-  if (num >= str.length) {
-    return str;
-  } else if (aLen > num) {
-    return a[0].slice(0,num)+"...";
+  if (str.length > num) {
+    return str.slice(0, num) + "...";
   } else {
-    return str.slice(0,num-3)+ "..."; 
+    return str;
   }
 }
 
